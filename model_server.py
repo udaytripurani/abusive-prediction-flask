@@ -12,8 +12,8 @@ nltk.download('stopwords')
 
 app = Flask(__name__)
 
-# Apply CORS and allow requests from 'http://localhost:3000'
-CORS(app, origins="http://localhost:3000")  # Allow only requests from your front-end
+# Apply CORS and allow requests from all origins (everywhere)
+CORS(app)  # Allow all origins
 
 # Load the LightGBM model and the TF-IDF vectorizer
 model = joblib.load('lgbm_abusive_model.pkl')  # Load the trained LightGBM model
